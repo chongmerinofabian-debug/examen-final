@@ -1,0 +1,572 @@
+/* ================================== */
+/* 0. VARIABLES, FUENTES Y RESET */
+/* ================================== */
+
+/* Carga las Fuentes de Google Fonts (Playfair Display y Raleway) */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+    /* COLORES PROPORCIONADOS */
+    --color-black: #000;
+    --color-white: #fff;
+    --color-blue: #037bc0;        /* Azul primario */
+    --color-dark-blue: #005485;   /* Azul oscuro */
+    --color-green: #3cbc00;       /* Verde */
+    --gris-claro: #e1e1e1;
+    --gris-oscuro: #4f4f4f;       
+
+    /* FUENTES PROPORCIONADAS */
+    --font-family-text: 'Raleway', sans-serif;
+    --font-family-titles: 'Playfair Display', serif;
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%; /* 1rem = 10px */
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body {
+    font-family: var(--font-family-text);
+    font-size: 1.6rem;
+    line-height: 1.5;
+    background-color: var(--color-white); 
+    color: var(--color-black);
+}
+
+.contenedor {
+    max-width: 120rem;
+    margin: 0 auto;
+    width: 95%; 
+}
+
+a {
+    text-decoration: none;
+    color: var(--color-black);
+}
+
+h1, h2, h3 {
+    text-align: center;
+    font-family: var(--font-family-titles);
+    margin-bottom: 3rem; 
+    color: var(--color-black);
+    text-transform: capitalize;
+}
+
+h1 { font-size: 3.8rem; }
+h2 { font-size: 3.4rem; }
+h3 { font-size: 3rem; }
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+/* ================================== */
+/* 1. ENCABEZADO Y NAVEGACIÓN */
+/* ================================== */
+
+.site-header {
+    padding-top: 5rem; 
+}
+
+.site-header h1 {
+    font-size: 3.8rem;
+    margin: 0;
+    color: var(--color-blue);
+    margin-bottom: 0;
+}
+
+.navegacion-principal {
+    display: flex;
+    gap: 3rem;
+    justify-content: center;
+    padding: 2rem 0; 
+    border-bottom: 1px solid var(--gris-claro);
+    margin-bottom: 5rem; 
+}
+
+.navegacion-principal a {
+    color: var(--gris-oscuro);
+    font-weight: 500;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    transition: color .3s ease;
+}
+
+.navegacion-principal a:hover {
+    color: var(--color-blue);
+}
+
+/* Banner Principal de Home */
+.site-header.inicio {
+    padding-top: 5rem;
+    margin-bottom: 0; 
+    border-bottom: none;
+}
+
+.imagen-hero {
+    height: 55rem; 
+    background-image: url(../Principal.jpg); 
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.contenido-principal {
+    padding-top: 5rem;
+}
+
+
+/* ================================== */
+/* 2. HOME SECCIONES */
+/* ================================== */
+
+/* Categorías */
+.listado-categorias {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-bottom: 5rem;
+}
+
+.categoria {
+    text-align: center;
+}
+
+.categoria img {
+    width: 100%;
+    display: block;
+}
+
+.categoria a {
+    display: block;
+    background-color: var(--color-dark-blue);
+    color: var(--color-white);
+    text-transform: uppercase;
+    padding: 1rem 0;
+    margin-top: -4px; 
+    transition: background-color .3s ease;
+}
+
+.categoria a:hover {
+    background-color: var(--color-blue);
+}
+
+/* Sobre Nosotros en HOME (IMAGEN + CAJA AZUL) */
+.sobre-nosotros-home {
+    background-color: var(--color-blue);
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+}
+
+.grid-nosotros-home {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    align-items: stretch; 
+    max-width: 120rem;
+    margin: 0 auto;
+}
+
+.imagen-nosotros img {
+    height: 100%;
+    object-fit: cover;
+}
+
+.texto-nosotros-home {
+    color: var(--color-white);
+    padding: 4rem 2rem; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.texto-nosotros-home h2 {
+    text-align: left;
+    margin-top: 0;
+    color: var(--color-white);
+    font-size: 3.5rem;
+    margin-bottom: 2rem;
+}
+
+/* Productos Destacados en Home (3 columnas simples) */
+.destacado-home {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.ver-todos {
+    margin-top: 3rem;
+    width: 30rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* ================================== */
+/* 3. PRODUCTOS Y TIENDA */
+/* ================================== */
+
+/* Botones Comunes */
+.boton {
+    display: block;
+    text-align: center;
+    padding: 1rem 3rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    border: none;
+    transition: background-color .3s ease;
+    color: var(--color-white);
+    border-radius: .5rem;
+}
+
+.boton-primario {
+    background-color: var(--color-blue);
+}
+
+.boton-secundario {
+    background-color: var(--color-green); 
+}
+
+.boton:hover {
+    cursor: pointer;
+    background-color: var(--color-dark-blue); 
+}
+
+/* Grid de Productos */
+.listado-productos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 2rem;
+    margin-bottom: 5rem;
+}
+
+/* Producto 1 (El grande de la Tienda) */
+.listado-productos .producto:nth-child(1) {
+    grid-column: 1 / 3;
+    grid-template-columns: 2fr 1fr; 
+    gap: 0;
+    align-items: stretch;
+    background-color: var(--color-blue); 
+    padding: 0;
+    display: grid; 
+}
+
+.listado-productos .producto:nth-child(1) .texto-producto {
+    background-color: var(--color-blue);
+    height: 100%;
+    padding: 2rem;
+}
+
+/* Estilo general de los productos */
+.producto {
+    background-color: #f8f8f8;
+}
+
+.texto-producto {
+    padding: 2rem;
+    background-color: var(--color-blue);
+    color: var(--color-white);
+    text-align: center;
+    height: 100%; /* Asegura que la caja de texto se estire */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around; /* Distribuye el espacio entre elementos */
+}
+
+.texto-producto h3 {
+    margin-bottom: 0.5rem;
+    font-size: 2.4rem;
+    color: var(--color-white);
+}
+
+.texto-producto p {
+    margin-bottom: 1.5rem;
+    color: var(--gris-claro);
+}
+
+.texto-producto .precio {
+    font-family: var(--font-family-titles);
+    font-size: 3.5rem;
+    font-weight: bold;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    color: var(--color-white);
+}
+
+
+/* ================================== */
+/* 4. NOSOTROS (Página individual) */
+/* ================================== */
+.grid-nosotros {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    padding: 5rem 0;
+}
+.grid-nosotros .texto-nosotros h3 {
+    text-align: left;
+    margin-top: 0;
+}
+
+
+/* ================================== */
+/* 5. CONTACTO */
+/* ================================== */
+
+.formulario {
+    max-width: 80rem;
+    margin: 0 auto;
+    margin-bottom: 5rem;
+}
+
+.formulario fieldset {
+    border: 1px solid var(--gris-claro);
+    margin-bottom: 2rem;
+    padding: 2rem;
+}
+
+.formulario legend {
+    background-color: var(--color-dark-blue);
+    color: var(--color-white);
+    padding: 1.5rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 1.8rem;
+    width: calc(100% + 4rem); /* Truco para que la legend ocupe todo el ancho del fieldset y padding */
+    margin-left: -2rem; 
+    margin-right: -2rem;
+}
+
+.campo {
+    margin-bottom: 2rem;
+}
+
+.campo label {
+    color: var(--gris-oscuro);
+    font-weight: bold;
+    display: block;
+    margin-bottom: .5rem;
+}
+
+.campo input:not([type="radio"]),
+.campo select,
+.campo textarea {
+    width: 100%;
+    border: 1px solid var(--gris-claro);
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    font-size: 1.6rem;
+    outline: none; 
+}
+
+.opciones-radio {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 2rem;
+    margin-top: 1rem;
+}
+
+.opciones-radio .opcion {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.opciones-radio label {
+    font-weight: normal;
+}
+
+.boton-enviar {
+    background-color: var(--color-green); 
+    border-radius: 0; 
+    width: 100%;
+    margin-top: 2rem;
+}
+
+/* ================================== */
+/* 6. GALERÍA */
+/* ================================== */
+
+.galeria {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 2rem;
+    margin-bottom: 5rem;
+}
+
+.galeria img {
+    height: 30rem; 
+    object-fit: cover;
+    width: 100%;
+}
+
+/* ================================== */
+/* 7. BLOG (Listado y Entrada) */
+/* ================================== */
+
+.grid-blog {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 4rem;
+    margin-bottom: 5rem;
+}
+
+.entrada {
+    border-bottom: 1px solid var(--gris-claro);
+    padding-bottom: 4rem;
+    margin-bottom: 4rem;
+}
+
+.entrada:last-of-type {
+    border: none;
+    margin-bottom: 0;
+}
+
+.entrada h3 {
+    text-align: left;
+    font-family: var(--font-family-text); 
+    font-weight: 700;
+}
+
+.entrada .meta {
+    font-size: 1.4rem;
+    color: var(--gris-oscuro);
+    margin: 0;
+}
+
+.entrada .meta span {
+    font-weight: bold;
+    color: var(--color-black);
+}
+
+.entradas .boton {
+    margin-top: 2rem;
+    width: 15rem;
+}
+
+/* Sidebar */
+.otras-entradas {
+    padding: 2rem;
+    background-color: #f8f8f8; 
+}
+
+.otras-entradas h3 {
+    color: var(--color-dark-blue);
+}
+
+.otras-entradas ul {
+    list-style: none;
+    padding: 0;
+}
+
+/* Entrada Individual */
+.meta-entrada {
+    text-align: left; 
+    margin-bottom: 3rem;
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.4rem;
+    width: 100%;
+    border-bottom: 1px solid var(--gris-claro);
+    padding-bottom: 1rem;
+}
+
+.contenido-entrada {
+    margin-top: 3rem;
+    font-size: 1.8rem;
+}
+
+.contenido-entrada blockquote {
+    border-left: 5px solid var(--color-dark-blue);
+    font-style: italic;
+    margin: 2rem 0;
+    padding-left: 2rem;
+    color: var(--gris-oscuro);
+}
+
+
+/* ================================== */
+/* 8. PIE DE PÁGINA (FOOTER) */
+/* ================================== */
+
+.site-footer {
+    border-top: 1px solid var(--gris-claro);
+    margin-top: 5rem;
+    padding-top: 5rem;
+    color: var(--gris-oscuro);
+}
+
+.grid-footer {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 2rem;
+    padding-bottom: 5rem;
+}
+
+.footer-widget h3 {
+    text-align: left;
+    margin-bottom: 2rem;
+    color: var(--gris-oscuro); 
+    font-family: var(--font-family-titles);
+}
+
+.menu-footer a {
+    display: block;
+    color: var(--gris-oscuro);
+    margin-bottom: 0.5rem; 
+    font-size: 1.4rem;
+    font-weight: 300;
+}
+
+.copyright {
+    text-align: center;
+    padding: 2rem 0;
+    border-top: 1px solid var(--gris-claro);
+    font-size: 1.4rem;
+}
+
+/* ================================== */
+/* 9. MEDIA QUERIES (RESPONSIVE) */
+/* ================================== */
+@media (max-width: 768px) {
+    /* General */
+    .navegacion-principal {
+        flex-direction: column;
+    }
+    .navegacion-principal a {
+        text-align: center;
+        padding: 1rem 0;
+    }
+
+    /* Home */
+    .listado-categorias,
+    .grid-nosotros-home,
+    .destacado-home {
+        grid-template-columns: 1fr;
+    }
+    .texto-nosotros-home h2, .footer-widget h3 {
+        text-align: center;
+    }
+
+    /* Tienda */
+    .listado-productos {
+        grid-template-columns: 1fr; 
+    }
+    .listado-productos .producto:nth-child(1) {
+        grid-column: unset; 
+        grid-template-columns: 1fr; 
+    }
+
+    /* Blog */
+    .grid-blog {
+        grid-template-columns: 1fr; 
+    }
+    
+    /* Footer */
+    .grid-footer {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+}
